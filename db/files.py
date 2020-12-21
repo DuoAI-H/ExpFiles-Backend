@@ -37,13 +37,13 @@ def found_by (keyword_s: str):
                     list_related.append(items)
     return list_related
 
-def request (user_key: str):
+def request(user_key: list):
     
     return None
 
 def get_equal(keyword_s:str):
     list_related=found_by(keyword_s)
     list_auth=request(list_related)
-    print(list_related)
+    return list_auth
 
 get_equal("2019")
