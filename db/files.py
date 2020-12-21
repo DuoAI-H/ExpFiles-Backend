@@ -53,4 +53,7 @@ def request(user_key: list, auth: str):
 def get_equal(keyword_s:str, user_auth: str):
     list_related=found_by(keyword_s)
     list_auth=request(list_related, user_auth)
-    return list_auth
+    if not list_related:
+        return None
+    else:
+        return list_auth
