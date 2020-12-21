@@ -2,6 +2,7 @@ from pydantic import BaseModel
 
 class UserOut(BaseModel):
     username: str
+    password: str
     nombre: str
     apellido: str = False
     correo: str = False
