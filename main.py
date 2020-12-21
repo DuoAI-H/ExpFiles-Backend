@@ -59,7 +59,7 @@ async def new_user(newuser: UserInDB):
     else:
         return response_new_user
 
-@api.get("/user/Buscar/")#/{hint.keyword_s}
+@api.get("/user/Buscar/{keyword_s}")#/
 async def get_file(hint: HintSearch):
     #Aca busco todo lo que concuerde, con la funcion get
     id_items_related = get_equal(hint.keyword_s, hint.user_auth)
