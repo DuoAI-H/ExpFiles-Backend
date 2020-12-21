@@ -1,4 +1,6 @@
-from db.user_db import UserInDB, get_user, update_password, create_user, login
+from starlette import responses
+from starlette.responses import Response
+from db.user_db import UserInDB, get_user, update_password, create_user, login, remove_user
 from models.user_models import UserOut, passOut, passUpdate
 from db.files import FilesDB, get_item, get_equal
 from models.files_models import FileOut, HintSearch
@@ -59,7 +61,22 @@ async def new_user(newuser: UserInDB):
     else:
         return response_new_user
 
-@api.get("/user/Buscar/")#/
+@api.delete("/user/deleteUser/{old_username}",
+            summary="Delete User",
+            response_class=Response,
+            responses={
+                200: {"description":"User successfullt deleted"},
+                404: {"description":"User not found"},
+            },
+)
+async def delete_user(old_username: str):
+    so_what = remove_user(old_username)
+    if so_what:
+        return Response(status_code=200)
+    else:
+        return Response(status_code=404)
+
+@api.put("/user/Buscar/")#/
 async def get_file(hint: HintSearch):
     filesT= list()
     #Aca busco todo lo que concuerde, con la funcion get
