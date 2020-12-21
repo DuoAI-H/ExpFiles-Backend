@@ -57,5 +57,3 @@ def get_equal(keyword_s:str, user_auth: str):
         return None
     else:
         return list_auth
-
-pprint(get_equal("M","admin"))
