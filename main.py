@@ -1,6 +1,6 @@
 from db.user_db import UserInDB, get_user, update_password, create_user, login
 from models.user_models import UserOut, passOut, passUpdate
-from db.files import FilesDB, get_data
+from db.files import FilesDB, get_item, get_equal
 from models.files_models import FileOut, HintSearch
 
 import datetime
@@ -59,10 +59,10 @@ async def new_user(newuser: UserInDB):
     else:
         return response_new_user
 
-@api.get("/user/Buscar/{keyword_s}")
-async def get_data(hint: HintSearch):
+@api.get("/user/Buscar/")#/{hint.keyword_s}
+async def get_file(hint: HintSearch):
     #Aca busco todo lo que concuerde, con la funcion get
-    id_items_related = get_equal(HintSearch.keyword_s, HintSearch.user_auth)
+    id_items_related = get_equal(hint.keyword_s, hint.user_auth)
     filesT= list()
     for item in id_items_related:
         row = get_item(item)
