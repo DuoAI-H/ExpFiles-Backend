@@ -59,7 +59,7 @@ async def new_user(newuser: UserInDB):
     else:
         return response_new_user
 
-@api.get("/user/Buscar/")#/
+@api.put("/user/Buscar/")#/
 async def get_file(hint: HintSearch):
     filesT= list()
     #Aca busco todo lo que concuerde, con la funcion get

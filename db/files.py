@@ -43,11 +43,11 @@ def found_by (keyword_s: str):
     return list_related
 
 def request(user_key: list, auth: str):
-    dict_auth = dict()
+    dict_auth = list()
     for id_file in user_key:
         handler = get_item(id_file)
         if auth in handler["user_auth"]:
-            dict_auth[id_file] = handler
+            dict_auth.append(handler)
     return dict_auth
 
 def get_equal(keyword_s:str, user_auth: str):
