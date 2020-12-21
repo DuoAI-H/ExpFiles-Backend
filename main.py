@@ -8,6 +8,7 @@ from fastapi import HTTPException
 api = FastAPI()
 
 ###############################################
+"""
 from fastapi.middleware.cors import CORSMiddleware
 
 origins = [
@@ -26,7 +27,7 @@ api.add_middleware(
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
-)
+)"""
 ###############################################
 
 @api.get("/user/leerUsuario/{username}")
@@ -55,3 +56,8 @@ async def new_user(newuser: UserInDB):
         raise HTTPException(status_code=409, detail= "Conflicto, el usuario ya existe")
     else:
         return response_new_user
+
+@api.get("/user/Buscar/{keyword_s}")
+async def get_data(keyword_s: str):
+    #Aca busco todo lo que concuerde, con la funcion get
+    id_items_related = get_equal(keyword_s)
