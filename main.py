@@ -12,7 +12,7 @@ from fastapi import HTTPException
 api = FastAPI()
 
 ###############################################
-"""
+
 from fastapi.middleware.cors import CORSMiddleware
 
 origins = [
@@ -31,7 +31,7 @@ api.add_middleware(
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
-)"""
+)
 ###############################################
 
 @api.get("/user/leerUsuario/{username}")
@@ -84,8 +84,4 @@ async def get_file(hint: HintSearch):
     if id_items_related == None:
         raise HTTPException(status_code=409, detail= "No hay archivos por mostrar")
     else:
-        for item in id_items_related:
-            row = get_item(item)
-            # Una lista de diccionarios, cada diccionario es un FileOut
-            filesT.append(FileOut(**row))
-        return filesT
+        return id_items_related
