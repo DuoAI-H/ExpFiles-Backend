@@ -1,6 +1,7 @@
 from db.user_db import UserInDB, get_user, update_password, create_user, login
 from models.user_models import UserOut, passOut, passUpdate
 from db.files import FilesDB, get_data
+from models.files import FileOut, HintSearch
 
 import datetime
 from fastapi import FastAPI
@@ -59,6 +60,6 @@ async def new_user(newuser: UserInDB):
         return response_new_user
 
 @api.get("/user/Buscar/{keyword_s}")
-async def get_data(keyword_s: str):
+async def get_data(hint: HintSearch):
     #Aca busco todo lo que concuerde, con la funcion get
-    id_items_related = get_equal(keyword_s)
+    id_items_related = get_equal(HintSearch.keyword_s, HintSearch.user_auth)

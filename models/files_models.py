@@ -5,3 +5,7 @@ class FileOut(BaseModel):
     data_upload: str
     date_expired: str
     file_uploaded: str
+
+class HintSearch(BaseModel):
+    keyword_s: str
+    user_auth: str
