@@ -57,3 +57,5 @@ def get_equal(keyword_s:str, user_auth: str):
         return None
     else:
         return list_auth
+
+#print(get_equal("yz","admin"))
