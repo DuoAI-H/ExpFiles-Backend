@@ -76,7 +76,7 @@ async def delete_user(old_username: str):
     else:
         return Response(status_code=404)
 
-@api.get("/user/Buscar/")#/
+@api.put("/user/Buscar/")#/
 async def get_file(hint: HintSearch):
     filesT= list()
     #Aca busco todo lo que concuerde, con la funcion get
