@@ -46,4 +46,5 @@ def get_equal(keyword_s:str):
     list_auth=request(list_related)
     return list_auth
 
-get_equal("2019")
+#get_equal("2019")
+found_by("Type")

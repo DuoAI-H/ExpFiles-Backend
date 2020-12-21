@@ -1,6 +1,6 @@
 from db.user_db import UserInDB, get_user, update_password, create_user, login
 from models.user_models import UserOut, passOut, passUpdate
-from db.files import FilesDB, get_data
+from db.files import FilesDB, get_data, get_equal
 
 import datetime
 from fastapi import FastAPI
