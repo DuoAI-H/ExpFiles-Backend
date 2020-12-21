@@ -10,7 +10,7 @@ from fastapi import HTTPException
 api = FastAPI()
 
 ###############################################
-"""
+
 from fastapi.middleware.cors import CORSMiddleware
 
 origins = [
@@ -29,7 +29,7 @@ api.add_middleware(
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
-)"""
+)
 ###############################################
 
 @api.get("/user/leerUsuario/{username}")
@@ -59,7 +59,7 @@ async def new_user(newuser: UserInDB):
     else:
         return response_new_user
 
-@api.get("/user/Buscar/{keyword_s}")#/
+@api.get("/user/Buscar/")#/
 async def get_file(hint: HintSearch):
     #Aca busco todo lo que concuerde, con la funcion get
     id_items_related = get_equal(hint.keyword_s, hint.user_auth)
