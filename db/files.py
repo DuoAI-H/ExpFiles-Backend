@@ -26,7 +26,9 @@ database_files = datasample
 #Devuelve una lista con las llaves que contienen alguna concidencia
 def found_by (keyword_s: str):
     list_related = list()
+    # Items son las llaves
     for items in database_files.keys():
+        # item es la caracteristica objeto
         for item in database_files[items]:
             if item[0] not in ["file_id","user_auth"]:
                 search = item[1].strip().lower()
@@ -36,7 +38,7 @@ def found_by (keyword_s: str):
     return list_related
 
 def request (user_key: str):
-
+    
     return None
 
 def get_equal(keyword_s:str):
