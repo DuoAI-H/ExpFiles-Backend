@@ -61,11 +61,14 @@ async def new_user(newuser: UserInDB):
 
 @api.get("/user/Buscar/")#/
 async def get_file(hint: HintSearch):
+    filesT= list()
     #Aca busco todo lo que concuerde, con la funcion get
     id_items_related = get_equal(hint.keyword_s, hint.user_auth)
-    filesT= list()
-    for item in id_items_related:
-        row = get_item(item)
-        # Una lista de diccionarios, cada diccionario es un FileOut
-        filesT.append(FileOut(**row))
-    return filesT
+    if id_items_related == None:
+        raise HTTPException(status_code=409, detail= "No hay archivos por mostrar")
+    else:
+        for item in id_items_related:
+            row = get_item(item)
+            # Una lista de diccionarios, cada diccionario es un FileOut
+            filesT.append(FileOut(**row))
+        return filesT
