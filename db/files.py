@@ -58,4 +58,4 @@ def get_equal(keyword_s:str, user_auth: str):
     else:
         return list_auth
 
-pprint(get_equal("M","admin"))
+#pprint(get_equal("M","admin"))

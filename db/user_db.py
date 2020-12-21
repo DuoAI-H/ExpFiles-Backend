@@ -2,7 +2,7 @@ from typing import Dict
 from pydantic import BaseModel
 from pprint import pprint
 from fastapi import HTTPException
-from models.user_models import UserUpdated
+#from models.user_models import UserUpdated
 
 class UserInDB(BaseModel): #así se hace la herencia le python
     # Aca se dejan los demas en False para que el usuario pueda
@@ -87,6 +87,13 @@ def create_user(new_user: UserInDB):
     else:
         database_users[new_user.username]= new_user
         return database_users[new_user.username]
+
+def remove_user(old_user: str):
+    if old_user in database_users.keys():
+        del database_users[old_user]
+        return True
+    else:
+        return None
 
 def login(name: str, contra: str):
     for i,j in database_users.items():
