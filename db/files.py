@@ -38,7 +38,7 @@ def found_by (keyword_s: str):
     return list_related
 
 def request(user_key: list, auth: str):
-
+    
     return FileOut(file_name="",data_upload="",date_expired="",file_uploaded="")
 
 def get_equal(keyword_s:str, user_auth: str):
