@@ -2,7 +2,7 @@ from typing import Dict
 from pydantic import BaseModel
 import json
 
-with open('db/files.json',encoding='utf-8') as f : 
+with open('db/files.json',encoding='utf-8') as f: 
     data = json.load(f)
 
 
