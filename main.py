@@ -10,7 +10,7 @@ from fastapi import HTTPException
 api = FastAPI()
 
 ###############################################
-"""
+
 from fastapi.middleware.cors import CORSMiddleware
 
 origins = [
@@ -29,7 +29,7 @@ api.add_middleware(
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
-)"""
+)
 ###############################################
 
 @api.get("/user/leerUsuario/{username}")
