@@ -2,7 +2,7 @@ from typing import Dict
 from pydantic import BaseModel
 from pprint import pprint
 from fastapi import HTTPException
-#from models.user_models import UserUpdated
+from models.user_models import UserUpdated
 
 class UserInDB(BaseModel): #así se hace la herencia le python
     # Aca se dejan los demas en False para que el usuario pueda
