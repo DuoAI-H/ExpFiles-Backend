@@ -61,7 +61,7 @@ async def new_user(newuser: UserInDB):
     else:
         return response_new_user
 
-
+## hola 
 @api.delete("/user/deleteUser/{old_username}",
             summary="Delete User",
             response_class=Response,
