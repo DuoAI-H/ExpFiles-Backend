@@ -22,7 +22,8 @@ origins = [
     "http://localhost:8080",
     "http://localhost:8081",
     "http://localhost:8000",
-    "https://expfiles-sprint4-front.herokuapp.com"
+    "https://expfiles-sprint4-front.herokuapp.com",
+    "https://expfles-sprint4.herokuapp.com/"
 ]
 
 api.add_middleware(
