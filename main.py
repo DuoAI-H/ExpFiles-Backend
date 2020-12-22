@@ -61,6 +61,7 @@ async def new_user(newuser: UserInDB):
     else:
         return response_new_user
 
+
 @api.delete("/user/deleteUser/{old_username}",
             summary="Delete User",
             response_class=Response,
@@ -75,6 +76,7 @@ async def delete_user(old_username: str):
         return Response(status_code=200)
     else:
         return Response(status_code=404)
+
 
 @api.put("/user/Buscar/")#/
 async def get_file(hint: HintSearch):
